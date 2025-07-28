@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.scss">
+  </head>
+  <body class="">
+    <!-- header--------------------------------------- -->
+    <header>
+      <div class="header-container">
+        <a class="title" href="/">Where in the world?</a>
+        <a id="dark"><i class="fa-regular fa-moon"></i>  &nbsp;Dark Mode</a>
+      </div>
+    </header>
+    <!-- main----------------------------------------- -->
+    <main>
+      <div class="search-filter">
+        <!-- search -->
+        <div class="search">
+          <input type="text" placeholder="Search for a country..." id="inp">
+          <label for="inp" id="search-icon"><i class="fa-solid fa-magnifying-glass"></i></label>
+        </div>
+        <!-- filter -->
+        <div class="filter">
+          <select name="filter" id="filter">
+            <option value="" hidden>Filter by Region</option>
+            <option value="Africa">Africa</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Americas">Americas</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        </div>
+      </div>
+      <!-- country container -->
+      <div class="country-container">
+        <!-- cards -->
+        <a href='country.html?alpha=IND' class="country-card">
+          <img src="https://flagcdn.com/in.svg" alt="flag">
+          <div class="country-info">
+            <h3><b>India</b></h3>
+            <div class="country-details">
+              <p><b>Population: </b>1,38,00,04,385</p>
+              <p><b>Region: </b>Asia</p>
+              <p><b>Capital: </b>Delhi</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </main>
+    <!-- footer---------------------------------- -->
+    <footer>
+    </footer>
+
+
+    <!-- <div id="app"></div> -->
+    <!-- <script type="module" src="/src/main.js"></script> -->
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+     <script src="./script.js"></script>
+  </body>
+</html>

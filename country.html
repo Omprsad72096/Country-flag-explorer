@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./country.scss">
+</head>
+<body class="">
+    <header>
+      <div class="header-container">
+        <a class="title" href="/">Where in the world?</a>
+        <a id="dark"><i class="fa-regular fa-moon"></i>  &nbsp;Dark Mode</a>
+      </div>
+    </header>
+    
+
+    <main>
+        <!-- back -->
+        <div  class="back">
+            <span href="">
+                <i class="fa-solid fa-arrow-left"></i>Back
+            </span>
+        </div>
+
+        <div class="info-container">
+            <!-- flag img ------------------------------------------------------>
+            <img src="" alt="" class="flag-img">
+
+            <!-- country info --------------------------------------------------->
+            <div class="info">
+                <!-- Country name ---------------------->
+                <div class="country-name-h1">
+                    <h1 class="country-name"></h1>
+                </div>
+                <!-- country info--------------------- -->
+                <div class="country-info">
+                    <!-- main info -->
+                    <div class="main-info">
+                        <p class="native-name"><b>Native Name: </b><span id="nativeName"></span></p>
+                        <p class="population"><b>Population: </b><span id="popu"></span></p>
+                        <p class="region"><b>Region: </b><span id="reg"></span></p>
+                        <p class="sub-region"><b>Sub Region: </b><span id="sub-reg"></span></p>
+                        <p class="capital"><b>Capital: </b><span id="cap"></span></p>
+                    </div>
+                    <!-- side info -->
+                    <div class="more-info">
+                        <p  class="tld"><b>Top Level domain: </b><span id="tld"></span></p>
+                        <p class="currencies"><b>currencies: </b><span id="currencies"></span></p>
+                        <p class="lang"><b>Languages: </b><span id="lang"></span></p>
+                    </div>
+                </div>
+                <!-- border info------------------------- -->
+                 <div class="border-country">
+                    <p><b>Border Countries: </b></p>
+                    <!-- <a href="#" class="button">France</a>
+                    <a href="#" class="button">India</a>
+                    <a href="#" class="button">Nepal</a> -->
+                 </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./country.js"></script>
+</body>
+</html>

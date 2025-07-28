@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.dark{
+    --bgc :  hsl(207, 26%, 17%);
+    --textColor:  hsl(0, 100%, 100%);
+    --element: hsl(209, 23%, 22%);
+}
+body{
+    --bgc : hsl(0, 0%, 99%);
+    --textColor:   hsl(200, 15%, 8%);
+    --element: hsl(0, 100%, 100%);
+    font-family: nunito, sans-serif;
+    overflow-x: hidden; 
+    background-color: var(--bgc);
+    color: var(--textColor);
+     a { 
+        text-decoration: none;
+        color: var(--textColor);
+    }
+
+    @mixin flex-center($dirc:row, $ifCenter: true){
+        display: flex;
+        flex-direction: $dirc;
+        
+        @if $ifCenter {
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @mixin border($border-size: 1px, $border-style: solid, $border-color: black){
+        border: $border-size $border-style $border-color;
+    }
+
+    @mixin button($h: 40px, $w: 150px) {
+        background-color: var(--element);
+        font-weight: 200;
+        display: inline-block;
+        @include flex-center;
+        gap: 0.5rem;
+        height: $h;
+        width: $w;
+        box-shadow: 0 1px 2px 3px rgb(78, 78, 78, 0.1);
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    header{
+        @include flex-center;
+        width: 100vw;
+        padding: 25px 0px;
+        //        left-right | top-bottom | spread | color
+        box-shadow: 0 1px 2px 2px rgb(78, 78, 78, 0.08);
+
+        > .header-container{
+            @include flex-center;
+            justify-content: space-between;
+            width: 90%;
+            color: var(--textColor);
+
+            > .title{
+                font-size: 2rem;
+                font-weight: 800;
+                color: var(--textColor);
+            }
+
+            > #dark{
+                font-size: 1rem;
+                font-weight: 700;
+            }
+        }
+    }
+
+    main{
+        @include flex-center;
+        flex-direction: column;
+        gap: 6rem;
+        width: 100vw;
+        padding: 80px 0px;
+
+        > .back{
+            width: 90%;
+            > span {
+                @include button;
+            }
+
+        }
+
+        > .info-container{
+            width: 90%;
+            @include flex-center(row, false);
+            gap: 10rem;
+            justify-content: space-between;
+
+            > img {
+                width: calc(50% - 5rem);
+                max-height: 400px;
+                object-fit: fit;
+            }
+
+            > .info {
+                @include flex-center(column, false);
+                justify-content: space-between;
+                gap: 2rem;
+                height: 400px;
+                width: calc(50% - 5rem);
+
+                > .country-name-h1 {
+                    @include flex-center(column, false);
+                    justify-content: end;
+                    height: 20%;
+                }
+
+                > .country-info{
+                    @include flex-center(row, false);
+                    justify-content: space-between;
+                    height: calc(60% - 4rem);
+
+                    >  .main-info{
+                        > p {
+                            margin-bottom: 5px;
+                        }
+                    }
+                    > .more-info{
+                        @extend .main-info;
+                    }
+
+                }
+
+                > .border-country{
+                    @include flex-center(row, false);
+                    justify-content: start;
+                    align-items: start;
+                    flex-wrap: wrap;
+                    height: 20%;
+
+                    > p{
+                        margin-top: 5px;
+                        
+                    }
+
+                    > a {
+                        margin-left: 10px;
+                        @include button(30px, 100px);
+                    }
+                }
+            }
+
+        }
+    }
+}

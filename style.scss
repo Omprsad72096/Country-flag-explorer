@@ -1,0 +1,208 @@
+// // (Dark Mode Elements)
+// $Blue900DarkElement : hsl(209, 23%, 22%);
+// // (Dark Mode Background)
+// $Blue950DarkBgc : hsl(207, 26%, 17%);
+// // (Light Mode Text)
+// $Grey950LightText : hsl(200, 15%, 8%);
+// // (Light Mode Input)
+// $Grey400LightInp : hsl(0, 0%, 50%);
+// // (Light Mode Background)
+// $Grey50LightBgc : hsl(0, 0%, 99%);
+// // (Dark Mode Text & Light Mode Elements)
+// $WhiteDarkTextOrLightEle : hsl(0, 100%, 100%);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.dark{
+    --bgc :  hsl(207, 26%, 17%);
+    --textColor:  hsl(0, 100%, 100%);
+    --element: hsl(209, 23%, 22%);
+}
+body{
+    // $bgc : hsl(0, 0%, 99%);
+    // $textColor:   hsl(200, 15%, 8%);
+    // $element: hsl(0, 100%, 100%);
+    --bgc : hsl(0, 0%, 99%);
+    --textColor:   hsl(200, 15%, 8%);
+    --element: hsl(0, 100%, 100%);
+    font-family: nunito, sans-serif;
+    overflow-x: hidden;
+    // background-color: $Grey50;
+    background-color: var(--bgc);
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    @mixin flex-center($dirc:row, $ifCenter: true){
+        display: flex;
+        flex-direction: $dirc;
+        
+        @if $ifCenter {
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @mixin border($border-size: 1px, $border-style: solid, $border-color: black){
+        border: $border-size $border-style $border-color;
+    }
+
+    header{
+        position: fixed;
+        background-color: var(--bgc);
+        top: 0;
+        z-index: 1;
+        @include flex-center;
+        width: 100vw;
+        padding: 25px 0px;
+        //        left-right | top-bottom | spread | color
+        box-shadow: 0 1px 2px 2px rgb(78, 78, 78, 0.08);
+        
+        > .header-container{
+            @include flex-center;
+            justify-content: space-between;
+            width: 90%;
+            // background-color: pink; 
+            color: var(--textColor);
+
+            > .title{
+                font-size: 2rem;
+                font-weight: 800;
+                color: var(--textColor);
+            }
+
+            > #dark{
+                font-size: 1rem;
+                font-weight: 700;
+            }
+        }
+    }
+
+    main{
+        @include flex-center;
+        flex-direction: column;
+        gap: 3rem;
+        margin-top: 115px;
+        width: 100vw;
+        padding: 25px 0px;
+        // background-color: lightcyan;
+
+        > .search-filter {
+            // background-color: pink;
+            width: 90%;
+            @include flex-center(row, false);
+            justify-content: space-between;
+            
+
+            > .search{
+                position: relative;
+                height: 50px;
+                width: 500px;
+
+                > input {
+                    background-color: var(--element);
+                    color: var(--textColor);
+                    height: 100%;
+                    width: 100%;
+                    padding: 0 20px 0 15%;
+                    font-size: 0.9rem;
+
+                    border: none;
+                    outline: none;
+                    box-shadow: 0 1px 2px 3px rgb(78, 78, 78, 0.05);
+                    border-radius: 10px;
+
+                    &::placeholder{
+                        color: rgb(174, 174, 174);
+                    }
+                }
+
+                > #search-icon {
+                    position: absolute;
+                    top: 50%;
+                    left: 6%;
+                    transform: translate(0, -50%);
+                    color: rgb(174, 174, 174);
+                }
+            }
+
+            > .filter {
+                // height: 100%;
+                width: 250px;
+                
+                > select {
+                    height: 100%;
+                    width: 100%;
+                    background-color: var(--element);
+                    color: var(--textColor);
+                    padding: 0 20px 0 20px;
+                    box-shadow: 0 1px 2px 3px rgb(78, 78, 78, 0.05);
+                    border-radius: 5px;
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+
+        > .country-container{  
+            width: 90%;
+            // background-color: pink;
+            @include flex-center(row, false);
+            flex-wrap: wrap;
+            justify-content: start;
+            gap: 2rem;
+            
+            .country-card{
+                overflow: auto;
+                display: inline-block;
+                height: 340px;
+                width: calc(25% - 1.5rem);
+                border-radius: 10px;
+                box-shadow: 0 1px 2px 3px rgb(78, 78, 78, 0.1);
+                transition: 0.1s ease-in-out;
+                background-color: var(--element);
+                color: var(--textColor);
+                > img{
+                    height: 50%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+                > .country-info {
+                    margin: 30px 20px;
+                    // background-color: pink;
+
+                    > .country-details{
+                        margin-top: 10px;
+
+                        > p{
+                            font-size: 0.9rem;
+                            margin-top: 2px;
+                        }
+                    }
+                }
+
+                &:hover{
+                    transform: scale(1.02);
+                    box-shadow: 0 2px 4px 4px rgb(78, 78, 78, 0.2);
+
+                }
+            }
+            
+            
+            
+        }    
+    }
+}
+
+
+
+
+
+
+
