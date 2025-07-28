@@ -66,7 +66,7 @@ search.addEventListener("input", function(event) {
 
     if(userInp != '') {
         let searchCountry = [];
-        for(data of allCountryData){
+        for(let data of allCountryData){
             let currCountryName = data.name.common
             if(isSubsequence(userInp, currCountryName)){
                 searchCountry.push(data)
