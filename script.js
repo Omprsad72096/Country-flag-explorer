@@ -1,9 +1,11 @@
 // to get india only - https://restcountries.com/v3.1/name/Republic%20of%20India
 //all indipendent country - https://restcountries.com/v3.1/independent
 // all country name and flag - https://restcountries.com/v3.1/all?fields=name,flags
-console.log("hi")
+
+// for versel - every js file should be type="module", eg - <script type="module" src="./script.js"></script>
+// for static file like country.html, put them in publc folder
+
 let url = "https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital,cca3"
-console.log("hi2")
 const cardContainer = document.querySelector(".country-container")
 
 const filter = document.querySelector("#filter");
