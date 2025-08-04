@@ -1,3 +1,5 @@
+import './country.scss'
+
 const cca3 = new URLSearchParams(location.search).get("alpha")
 let url = `https://restcountries.com/v3.1/alpha/${cca3}`;
 let urlBorder = `https://restcountries.com/v3.1/alpha/`
