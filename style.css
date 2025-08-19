@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dark {
+  --bgc: hsl(207, 26%, 17%);
+  --textColor: hsl(0, 100%, 100%);
+  --element: hsl(209, 23%, 22%);
+}
+
+body {
+  --bgc: hsl(0, 0%, 99%);
+  --textColor: hsl(200, 15%, 8%);
+  --element: hsl(0, 100%, 100%);
+  font-family: nunito, sans-serif;
+  overflow-x: hidden;
+  background-color: var(--bgc);
+}
+body a {
+  text-decoration: none;
+  color: black;
+}
+body header {
+  position: fixed;
+  background-color: var(--bgc);
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  padding: 25px 0px;
+  box-shadow: 0 1px 2px 2px rgba(78, 78, 78, 0.08);
+}
+body header > .header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  color: var(--textColor);
+}
+body header > .header-container > .title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--textColor);
+}
+body header > .header-container > #dark {
+  color: var(--textColor);
+  font-size: 1rem;
+  font-weight: 700;
+}
+body main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 115px;
+  width: 100vw;
+  padding: 25px 0px;
+}
+body main > .search-filter {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body main > .search-filter > .search {
+  position: relative;
+  height: 50px;
+  width: 500px;
+}
+body main > .search-filter > .search > input {
+  background-color: var(--element);
+  color: var(--textColor);
+  height: 100%;
+  width: 100%;
+  padding: 0 20px 0 15%;
+  font-size: 0.9rem;
+  border: none;
+  outline: none;
+  box-shadow: 0 1px 2px 3px rgba(78, 78, 78, 0.05);
+  border-radius: 10px;
+}
+body main > .search-filter > .search > input::placeholder {
+  color: rgb(174, 174, 174);
+}
+body main > .search-filter > .search > #search-icon {
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  transform: translate(0, -50%);
+  color: rgb(174, 174, 174);
+}
+body main > .search-filter > .filter {
+  width: 250px;
+}
+body main > .search-filter > .filter > select {
+  height: 100%;
+  width: 100%;
+  background-color: var(--element);
+  color: var(--textColor);
+  padding: 0 20px 0 20px;
+  box-shadow: 0 1px 2px 3px rgba(78, 78, 78, 0.05);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+body main > .country-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 2rem;
+}
+body main > .country-container .country-card {
+  overflow: auto;
+  display: inline-block;
+  height: 340px;
+  width: calc(25% - 1.5rem);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 3px rgba(78, 78, 78, 0.1);
+  transition: 0.1s ease-in-out;
+  background-color: var(--element);
+  color: var(--textColor);
+}
+body main > .country-container .country-card > img {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+body main > .country-container .country-card > .country-info {
+  margin: 30px 20px;
+}
+body main > .country-container .country-card > .country-info > .country-details {
+  margin-top: 10px;
+}
+body main > .country-container .country-card > .country-info > .country-details > p {
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+body main > .country-container .country-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 2px 4px 4px rgba(78, 78, 78, 0.2);
+}
+
+/*# sourceMappingURL=style.css.map */
