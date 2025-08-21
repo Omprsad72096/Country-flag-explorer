@@ -40,7 +40,7 @@ function makeAllCards(data){
 function makeNewCard(cca3, flagSvg ,countryName, population, region, capital) {
     const countryCard = document.createElement("a")
     countryCard.classList.add("country-card")
-    countryCard.href = `/country.html?alpha=${cca3}`
+    countryCard.href = `country.html?alpha=${cca3}`
 
     countryCard.innerHTML = 
     `
